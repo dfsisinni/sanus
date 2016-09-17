@@ -9,7 +9,7 @@ Template.reset.events({
 			}
 			else{
 				$e.target.emailInput.value = "";
-				alert({title: 'Success!\nWe\'ve sent you a password reset link in your email.');
+				alert('Success!\nWe\'ve sent you a password reset link in your email.');
 				return Router.go('/');
 			};
 		});
