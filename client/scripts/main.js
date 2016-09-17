@@ -22,8 +22,8 @@ Template.signup.events({
 });
 
 Template.login.events({
-	'submit #login': function (event) 
-{		event.preventDefault();
+	'submit #login': function (event) {
+		event.preventDefault();
 
 		const target = event.target;
 		var user = {

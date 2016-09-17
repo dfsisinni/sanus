@@ -1,0 +1,57 @@
+<template name="patientDash">	
+	<div style="height:1px;"></div>
+	<div class="dash-card profile">
+		<div class="profile-image" style="background-image:url({{profileImageUrl}})">
+			<button class="log-out-btn">Log out</button>
+		</div>
+		<div class="profile-details">
+			<h1>{{currentUser.profile.name}}</h1>
+			<p>{{medicineCount}} active medications | Registered {{registrationDate}}</p>
+			<button class="settings-button"><img src="/resources/images/settings-ico.png" /></button>
+		</div>
+	</div>
+	<div class="dash-card notifications">
+		<h2>Notifications</h2>
+		{{#if notifications}}
+			<ul>
+				{{#each notification in notifications}}
+					{{#with notification}}
+						{{> notification}}
+					{{/with}}
+				{{/each}}
+			</ul>
+		{{else}}
+			<p class="empty-state">No notifications.</p>
+		{{/if}}
+	</div>
+	<div class="dash-card medications">
+		<h2>Medications</h2>
+		{{#if medications}}
+			<ul>
+				{{#each medication in medications}}
+					<li>
+						<a href="/med/{{medication._id}}">{{medication.name}}</a>
+						<button class="remove-med" data-id="{{medication._id}}">&times;</button>
+					</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+		<button class="add-medication">Add medication</button>
+	</div>
+</template>
+
+<template name="notification">
+	<li>
+		<span>
+			{{{notificationText}}}
+		</span>
+		{{#if notificationActions}}
+			<div class="actions-box">
+				<button class="accept"><img src="" /></button>
+				{{#if isRecommendation}}
+					<button class="reject"><img src="" /></button>
+				{{/if}}
+			</div>
+		{{/if}}
+	</li>
+</template>

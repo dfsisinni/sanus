@@ -1,3 +1,7 @@
 <template name="dash">
-	<h1>SSS</h1>
+	{{#if isPatient}}
+		{{> patientDash}}
+	{{else}}
+		{{> doctorDash}}
+	{{/if}}
 </template>
