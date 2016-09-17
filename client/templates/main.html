@@ -48,10 +48,20 @@
 		<label for="passwordInput">And a password.</label>
 		<input type="password" id="passwordInput" name="password" placeholder="Make sure it's at least 8 characters" />
 
-		<button type="submit">Get started.</button>
+		<label for="who">Who are you?</label>
+		<select class="who" name="type">
+			<option value="patient">Patient</option>
+			<option value="doctor">Doctor</option>
+		</select>
+
 		<a class="reset-password-link" href="/reset">
 			Reset Password
 		</a>
+
+		<br>
+
+		<button type="submit">Get started.</button>
+		
 	</form>
 </template>
 

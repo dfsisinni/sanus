@@ -1,21 +1,14 @@
 Meteor.methods({
 	'registerUser' (user) {
-
-		check(user.name, String);
 		check(user.email, String);
 		check(user.password, String);
+		check(user.profile.name, String);
+		check(user.profile.type, String);
 
 		Accounts.createUser({
 			email: user.email,
 			password: user.password
 		});
-
-		userInfo.insert({
-			id: Meteor.userId(),
-			name: user.name
-		});
-
-
 	},
 
 	'getDrugList' (query) {

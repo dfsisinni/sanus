@@ -38,10 +38,15 @@ Meteor.startup(() => {
 });
 
 Accounts.onCreateUser(function(options, user) {
+	console.log(arguments);
+
 	var userNumber = (Math.random() * 1000000);
 	while(Meteor.users.findOne({"profile.userNumber": userNumber})) {
 		userNumber = (Math.random() * 1000000);
 	};
 
-	user.profile = { userNumber };
+	user.profile =  options.profile;
+	user.profile.userNumber = userNumber;
+
+	return user;
 });

@@ -132,3 +132,9 @@ a {
 .alternative-actions a.alt-form-link {
 	font-size: 15px;
 }
+
+select.who {
+	width: 100px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}

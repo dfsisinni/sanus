@@ -5,10 +5,14 @@ Template.signup.events({
 		const target = event.target;
 
 		var user = {
-			name: target.name.value,
 			email: target.email.value,
-			password: target.password.value
+			password: target.password.value,
+			profile: {
+				name: target.name.value,
+				type: target.type.value
+			}
 		};
+		console.log('hit'); debugger
 
 		Meteor.call('registerUser', user, function (error, result) {
 			if (error) {
@@ -19,16 +23,16 @@ Template.signup.events({
 });
 
 Template.login.events({
-	'submit #login': function (event) {
-		event.preventDefault();
+	'submit #login': function (event) 
+{		event.preventDefault();
 
 		const target = event.target;
 		var user = {
 			email: target.email.value,
 			password: target.password.value
 		};
- 
-		Meteor.loginWithPassword(user.email, user.password, function (error, result) {
+
+ 		Meteor.loginWithPassword(user.email, user.password, function (error, result) {
 			if (error) {
 				toastr.error("Invalid login credentials!");
 			}
