@@ -12,7 +12,8 @@
 	        box-sizing: border-box;
 }
 .dash-card.profile {
-	padding: 0 0 12px 0;
+	padding: 0 0 9px 0;
+	overflow: hidden;
 }
 
 .profile-image {
@@ -23,5 +24,83 @@
 	-o-background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	box-shadow: 0px 3px 12px -9px #111;
+	position: relative;
 
 }
+
+.profile-image .logout-btn {
+	background: transparent;
+	position: absolute;
+	top: 0; right: 0;
+	outline: none; border: none;
+	cursor: pointer;
+	padding: 12px;
+	font-size: 10px;
+	background-color: rgba(0, 0, 0, 0.36);
+	color: #CCC;
+	border-radius: 0 0 0 3px;
+}
+
+.profile-details {
+	padding: 0 9px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.profile-details h1 {
+	font-size: 18px;
+	display: inline;
+	padding-right: 12px;
+}
+
+.profile-details p {
+	font-size: 11px;
+	color: #999;
+}
+
+.settings-button {
+	display: inline-block;
+	background-color: transparent;
+	border: 0; outline: none;
+	cursor: pointer;
+}
+.settings-button img {
+	height: 12px; width: 12px;
+}
+
+
+p.empty-state {
+	color: #999;
+	font-size: 11px;
+	margin-top: 9px;
+}
+
+
+/*medication*/
+.add-medication {
+	border: 0; outline: none;
+	cursor: pointer;
+	margin-top: 9px;
+	cursor: pointer;
+	background-color: transparent;
+	font-weight: bold;
+	padding: 4px 24px 4px 3px;
+	color: #777;
+	border-radius: 0 0 0 3px;
+	border-bottom: 2px solid #68AD99;
+	text-align: left;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+.splash-form form button:focus {
+	/*border-bottom: 2px solid #F7FAF9;
+	background-color: #fff;
+	box-shadow: 0px 9px 24px -12px #DEDEDE;
+	padding: 6px 24px 6px 3px;*/
+	opacity: 0.4;
+}
+

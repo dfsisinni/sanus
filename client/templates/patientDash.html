@@ -2,12 +2,11 @@
 	<div style="height:1px;"></div>
 	<div class="dash-card profile">
 		<div class="profile-image" style="background-image:url({{profileImageUrl}})">
-			<button class="log-out-btn">Log out</button>
+			<button class="logout-btn">Logout</button>
 		</div>
 		<div class="profile-details">
-			<h1>{{currentUser.profile.name}}</h1>
-			<p>{{medicineCount}} active medications | Registered {{registrationDate}}</p>
-			<button class="settings-button"><img src="/resources/images/settings-ico.png" /></button>
+			<h1>{{currentUser.profile.name}}</h1><button class="settings-button"><img src="/resources/images/settings-ico.png" /></button>
+			<p>{{medicineCount}} active medications<br />Registered {{registrationDate}}</p>
 		</div>
 	</div>
 	<div class="dash-card notifications">
@@ -36,7 +35,7 @@
 				{{/each}}
 			</ul>
 		{{/if}}
-		<button class="add-medication">Add medication</button>
+		<button class="add-medication">+ medication</button>
 	</div>
 </template>
 
