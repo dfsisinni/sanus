@@ -7,6 +7,16 @@ const Allergens = new Mongo.Collection('allergens');
 
 
 Meteor.startup(() => {
+	smtp = {
+		username: 'welcome@sanus.me',
+		password: 'welcomeme',
+		server:   'smtp.mailgun.org',
+		port: 587
+	}
+
+	process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
+
+
   	var fs = require('fs');
 	var path = require('path');
 	var fileName = process.env.PWD + path.join(__dirname, 'drugs.json');
@@ -35,6 +45,16 @@ Meteor.startup(() => {
 			});
 		}
 	}));
+
+	Accounts.emailTemplates.siteName = "AwesomeSite";
+	Accounts.emailTemplates.from = "AwesomeSite Admin <accounts@example.com>"
+	Accounts.emailTemplates.verifyEmail.text = function(user, url) {
+		console.log('here');
+		return 'Thank you for registering!  Please click on the following link to verify your email address: \r\n' + url;
+	};
+
+	
+
 });
 
 Accounts.onCreateUser(function(options, user) {
@@ -48,6 +68,11 @@ Accounts.onCreateUser(function(options, user) {
 
 	user.profile =  options.profile;
 	user.profile.userNumber = userNumber;
+
+
+	 Meteor.setTimeout(function() {
+      Accounts.sendVerificationEmail(user._id);
+    }, 2 * 1000);
 
 	return user;
 });
