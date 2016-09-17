@@ -12,7 +12,7 @@ Template.patientDash.helpers({
 
 Template.patientDash.events({
 	'click .logout-btn': function () {
-		$('body').append('<div id="logoutOver" class="loadingDiv"></div>');
+		$('body').append('<div id="logoutOver" style="display:block;" class="loadingDiv"></div>');
 		Meteor.logout(function() {
 			$('#logoutOver').remove();
 		});
