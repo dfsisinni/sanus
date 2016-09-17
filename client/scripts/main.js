@@ -3,7 +3,6 @@ Template.signup.events({
 		event.preventDefault();
 
 		const target = event.target;
-		console.log(target);
 
 		var user = {
 			name: target.name.value,
@@ -12,14 +11,27 @@ Template.signup.events({
 		};
 
 		Meteor.call('registerUser', user, function (error, result) {
-
-			console.log(error);
-
 			if (error) {
 				toastr.error("Unable to create account!");
-			} else {
-				toastr.success("Account created!");
+			} 
+		});
+	},
+});
+
+Template.login.events({
+	'submit #login': function (event) {
+		event.preventDefault();
+
+		const target = event.target;
+		var user = {
+			email: target.email.value,
+			password: target.password.value
+		};
+
+		Meteor.loginWithPassword (user.email, user.password, function (error, result) {
+			if (error) {
+				toastr.error("Invalid login credentials!");
 			}
 		});
 	},
-})
+});

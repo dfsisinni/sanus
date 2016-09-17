@@ -42,5 +42,5 @@ Meteor.methods({
 		});
 
 
-	}
+	},
 });
