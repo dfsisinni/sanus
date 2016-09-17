@@ -3,6 +3,7 @@ import { Mongo } from 'meteor/mongo';
 
 const Drugs = new Mongo.Collection('drugs');
 const userInfo = new Mongo.Collection('userInfo');
+const Allergens = new Mongo.Collection('allergens');
 
 
 Meteor.startup(() => {
@@ -19,6 +20,18 @@ Meteor.startup(() => {
 			Drugs.insert({
 				id: obj[i].id,
 				name: obj[i].name
+			});
+		}
+	}));
+
+	fileName = process.env.PWD + path.join(__dirname, 'allergens.json');
+	fs.readFile(fileName, {encoding: 'utf-8'}, Meteor.bindEnvironment(function (err, data) {
+		var obj = JSON.parse(data);
+
+		Allergens.remove({});
+		for (var i = 0; i < obj.length; i++) {
+			Allergens.insert({
+				name: obj[i]
 			});
 		}
 	}));
