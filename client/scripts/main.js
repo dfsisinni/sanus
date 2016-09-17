@@ -12,9 +12,8 @@ Template.signup.events({
 				type: target.type.value
 			}
 		};
-		console.log('hit'); debugger
 
-		Meteor.call('registerUser', user, function (error, result) {
+		Accounts.createUser(user, function (error) {
 			if (error) {
 				toastr.error("Unable to create account!");
 			} 
