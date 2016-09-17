@@ -1,9 +1,27 @@
 <template name="reset">
-	<div class="splash-card first">
+	<div style="height:1px;"></div>
+	<div class="splash-card first splash-form">
 		<h1>Forgot your password?</h1>
 		<form name="passwordResetInit" id="passwordResetInit" method="POST" action="" charset="utf-8">
 			<label for="emailInput">The email you signed up with</label>
-			<input type="email" name="emailInput" id="emailInput" /> 
+			<input type="email" name="emailInput" id="emailInput" placeholder="bruce@wayneenterpises.com" /> 
+
+			<button type="submit">Reset</button>
+		</form>
+	</div>
+</template>
+
+<template name="resetComplete">
+	<div style="height:1px;"></div>
+	<div class="splash-card first splash-form">
+		<h1>Enter your new password</h1>
+		<form name="passwordResetComplete" id="passwordResetComplete" method="POST" action="" charset="utf-8">
+			<label for="passwordOne">Password</label>
+			<input type="password" name="passwordOne" id="passwordOne" placeholder="Enter a new password" />
+			<label for="passwordTwo">Confirm Password</label>
+			<input type="password" name="passwordTwo" id="passwordTwo" placeholder="Renter your password" />
+
+			<button type="submit">Reset</button>
 		</form>
 	</div>
 </template>
