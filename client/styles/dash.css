@@ -29,7 +29,7 @@
 
 }
 
-.profile-image .logout-btn {
+.profile-image .logout-btn, .showQr {
 	background: transparent;
 	position: absolute;
 	top: 0; right: 0;
@@ -39,12 +39,15 @@
 	font-size: 10px;
 	background-color: rgba(0, 0, 0, 0.36);
 	color: #CCC;
-	border-radius: 0 0 0 3px;
 	border: 1px solid transparent;
 }
-.profile-image .logout-btn:focus {
+.profile-image .logout-btn:focus, .showQr:focus {
 	opacity: 0.6;
 	border: 1px solid black;
+}
+.showQr{
+	border-radius: 0 0 0 3px;
+	right: 55px;
 }
 
 .profile-details {
@@ -101,11 +104,7 @@ p.empty-state {
 	     -o-transition: all .3s;
 	        transition: all .3s;
 }
-.splash-form form button:focus {
-	/*border-bottom: 2px solid #F7FAF9;
-	background-color: #fff;
-	box-shadow: 0px 9px 24px -12px #DEDEDE;
-	padding: 6px 24px 6px 3px;*/
+.add-medication:focus {
 	opacity: 0.4;
 }
 

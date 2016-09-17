@@ -1,0 +1,57 @@
+
+select.who {
+	display: block; width: 100%;
+	margin: 3px 0 12px 0;
+	padding: 3px 9px;
+	height: 36px;
+
+	outline: none; border: none;
+	border-bottom: 2px solid #EBEBEB;
+	border-radius: 3px;
+	opacity: 0.7;
+
+	font-size: 18px;
+	color: #756C53;
+	background-color: white;
+
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+div.about-container {
+	overflow: auto;
+	height: 200px;
+}
+
+div.flex-child {
+	flex-grow: 1;
+	text-align: center;
+}
+
+.pills-pic-container {
+	width: 1400px;
+	height: 1200px;
+	zoom: 10%;
+	background-image: url('/resources/images/pills.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 250px;
+	opacity: 0.75;
+}
+
+.post-container {
+    margin: 20px 20px 0 0;  
+    overflow: auto;
+}
+
+.prof-pic {
+	width: 125px;
+	border-radius: 25%;
+}
