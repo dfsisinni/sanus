@@ -27,7 +27,7 @@ Template.login.events({
 			email: target.email.value,
 			password: target.password.value
 		};
-
+ 
 		Meteor.loginWithPassword (user.email, user.password, function (error, result) {
 			if (error) {
 				toastr.error("Invalid login credentials!");
@@ -35,12 +35,12 @@ Template.login.events({
 		});
 
 
-		Meteor.call('getDrugList', 'tylenol', function (error, data) {
+		/*Meteor.call('getDrugList', 'tylenol', function (error, data) {
 			var content = data.content;
 			content = content.substr(content.indexOf('(') + 1, content.length - 1);
 			content = content.substr(0, content.lastIndexOf(')') -1);
 
 			console.log(JSON.parse(content).types[0].references);		
-		});
+		});*/
 	},
 });

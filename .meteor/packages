@@ -26,5 +26,6 @@ random
 iron:router
 check
 manuelschoebel:ms-seo
-accounts-password
+http
 chrismbeckett:toastr
+accounts-password
