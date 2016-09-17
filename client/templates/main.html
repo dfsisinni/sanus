@@ -8,6 +8,9 @@
 
 
 <template name="main">
+	{{#if loggingIn}}
+		<div class="loadingDiv" style="display:block;"></div>
+	{{/if}}
 	<div style="height:1px;"></div>
 	<div class="splash-card first">
 		<div class="logo-container"></div>

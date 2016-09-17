@@ -28,7 +28,7 @@ Template.login.events({
 			password: target.password.value
 		};
  
-		Meteor.loginWithPassword (user.email, user.password, function (error, result) {
+		Meteor.loginWithPassword(user.email, user.password, function (error, result) {
 			if (error) {
 				toastr.error("Invalid login credentials!");
 			}
