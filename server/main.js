@@ -37,6 +37,15 @@ Meteor.startup(() => {
 	}));
 });
 
+Accounts.onCreateUser(function(options, user) {
+	var userNumber = (Math.random() * 1000000);
+	while(Meteor.users.findOne({"profile.userNumber": userNumber})) {
+		userNumber = (Math.random() * 1000000);
+	};
+
+	user.profile = { userNumber };
+});
+
 Meteor.methods({
 	'registerUser' (user) {
 
