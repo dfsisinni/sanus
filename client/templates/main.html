@@ -1,0 +1,69 @@
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/ico" href="/favicon.ico?v=2" />
+</head>
+
+
+
+<template name="main">
+	<div style="height:1px;"></div>
+	<div class="splash-card first">
+		<div class="logo-container"></div>
+	</div>
+	<div class="splash-card">
+		<div class="splash-form">
+			{{> UI.dynamic template=currentForm}}
+		</div>
+		<div class="alternative-actions">
+			<a class="alt-form-link" href="/{{isSignup}}">
+				{{#if isSignup}}
+					Log in
+				{{else}}
+					Sign up
+				{{/if}}
+			</a>
+			<a class="tutorial-link" href="/tutorials">
+				How this works.
+			</a>
+			<a class="about-link" href="/about">
+				About
+			</a>
+		</div>
+	</div>
+</template>
+
+
+<template name="signup">
+	<h2>Sign up &ndash; it's free.</h2>
+	<form name="signup" action="" method="POST" autocomplete="off">
+		<label for="nameInput">Your name.</label>
+		<input type="text" id="nameInput" placeholder="ex. Anne Wo" />
+		<label for="emailInput">Email.</label>
+		<input type="email" id="emailInput" placeholder="anne@23andme.com" />
+		<label for="passwordInput">And a password.</label>
+		<input type="password" id="passwordInput" placeholder="Make sure it's at least 8 characters" />
+
+		<button type="submit">Get started.</button>
+		<a class="reset-password-link" href="/reset">
+			Reset Password
+		</a>
+	</form>
+</template>
+
+
+<template name="login">
+	<h2>Log in.</h2>
+	<form name="login" action="" method="POST" autocomplete="off">
+		<label for="emailInput">Email</label>
+		<input type="email" id="emailInput" placeholder="sergey@verily.com" />
+		<label for="passwordInput">Password</label>
+		<input type="password" id="passwordInput" placeholder="********" />
+
+		<button type="submit">Continue.</button>
+		<a class="reset-password-link" href="/reset">
+			Reset Password
+		</a>
+	</form>
+</template>

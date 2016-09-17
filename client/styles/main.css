@@ -1,1 +1,133 @@
-/* CSS declarations go here */
+body {
+	background-color: #F7F7F7;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.splash-card {
+	width: 90%;
+	min-width: 210px;
+	position: relative; margin: 12px auto 48px;
+	padding: 18px;
+	border-radius: 5px;
+	border: 1px solid #FAFAFA;
+	box-shadow: 0px 3px 12px -6px #787878;
+	background-color: white;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.splash-card.first{
+	margin: 24px auto 0;
+}
+
+.logo-container {
+	width: 100%;
+	height: 90px;
+	background-image: url('/resources/images/logo-long.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 210px;
+}
+
+.splash-form h2 {
+	font-size: 21px;
+	margin-bottom: 18px;
+	color: #68AD99;
+	text-align: center;
+	box-shadow: 0px 6px 18px -12px #CCC;
+	padding-bottom: 12px;
+}
+.splash-form form {
+	display: block;
+	margin-bottom: 12px;
+}
+.splash-form form label {
+	display: block;
+	color: #777;
+	font-size: 14px;
+}
+.splash-form form input {
+	display: block; width: 100%;
+	margin: 3px 0 12px 0;
+	padding: 3px 9px;
+	height: 36px;
+
+	outline: none; border: none;
+	border-bottom: 2px solid #EBEBEB;
+	border-radius: 3px;
+
+	font-size: 18px;
+	color: #756C53;
+
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.splash-form form input:focus {
+	border-bottom: 1px solid #F7FAF9;
+	background-color: #fff;
+	box-shadow: 0px 6px 24px -12px #DEDEDE;
+	height: 41px;
+}
+.splash-form form button {
+	outline: none; border: none;
+	cursor: pointer;
+	background-color: transparent;
+	font-weight: bold;
+	padding: 4px 24px 4px 3px;
+	color: #777;
+	border-radius: 0 0 0 3px;
+	border-bottom: 2px solid #68AD99;
+	text-align: left;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+.splash-form form button:focus {
+	border-bottom: 2px solid #F7FAF9;
+	background-color: #fff;
+	box-shadow: 0px 9px 24px -12px #DEDEDE;
+	padding: 6px 24px 6px 3px;
+}
+
+.reset-password-link{
+	font-size: 12px;
+	float: right;
+	margin-top: 12px;
+
+}
+
+
+.alternative-actions {
+	display: block;
+	margin-top: 24px;
+	padding-top: 18px;
+	overflow: hidden;
+	box-shadow: 0px -6px 18px -12px #CCC;
+}
+
+.alternative-actions a {
+	text-align: center;
+	display: block;
+	width: 33.33%;
+	float: left;
+	font-size: 12px;
+	line-height: 24px;
+}
+.alternative-actions a.alt-form-link {
+	font-size: 15px;
+}

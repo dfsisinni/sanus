@@ -2,10 +2,10 @@
 App.info({
 	id: 'com.sanus.ios.sanus',
 	name: 'sanus',
-	description: 'Get über power in one button click',
-	author: 'Matt Development Group',
-	email: 'contact@example.com',
-	website: 'http://example.com'
+	description: 'Nigga tits',
+	author: 'Dane n J',
+	email: 'nigga@tits.com',
+	website: 'http://zoophillia.com',
 });
 // Set up resources such as icons and launch screens.
 App.icons({
