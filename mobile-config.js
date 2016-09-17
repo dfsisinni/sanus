@@ -2,10 +2,10 @@
 App.info({
 	id: 'com.sanus.ios.sanus',
 	name: 'sanus',
-	description: 'Nigga tits',
+	description: '',
 	author: 'Dane n J',
-	email: 'nigga@tits.com',
-	website: 'http://zoophillia.com',
+	email: '',
+	website: '',
 });
 // Set up resources such as icons and launch screens.
 App.icons({
