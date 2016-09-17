@@ -98,10 +98,11 @@ a {
 	        transition: all .3s;
 }
 .splash-form form button:focus {
-	border-bottom: 2px solid #F7FAF9;
+	/*border-bottom: 2px solid #F7FAF9;
 	background-color: #fff;
 	box-shadow: 0px 9px 24px -12px #DEDEDE;
-	padding: 6px 24px 6px 3px;
+	padding: 6px 24px 6px 3px;*/
+	opacity: 0.4;
 }
 
 .reset-password-link{
