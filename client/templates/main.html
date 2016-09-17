@@ -37,13 +37,13 @@
 
 <template name="signup">
 	<h2>Sign up &ndash; it's free.</h2>
-	<form name="signup" action="" method="POST" autocomplete="off">
+	<form id="signup" name="signup" action="" method="POST" autocomplete="off">
 		<label for="nameInput">Your name.</label>
-		<input type="text" id="nameInput" placeholder="ex. Anne Wo" />
+		<input type="text" id="nameInput" name="name" placeholder="ex. Anne Wo" />
 		<label for="emailInput">Email.</label>
-		<input type="email" id="emailInput" placeholder="anne@23andme.com" />
+		<input type="email" id="emailInput" name="email" placeholder="anne@23andme.com" />
 		<label for="passwordInput">And a password.</label>
-		<input type="password" id="passwordInput" placeholder="Make sure it's at least 8 characters" />
+		<input type="password" id="passwordInput" name="password" placeholder="Make sure it's at least 8 characters" />
 
 		<button type="submit">Get started.</button>
 		<a class="reset-password-link" href="/reset">
@@ -55,7 +55,7 @@
 
 <template name="login">
 	<h2>Log in.</h2>
-	<form name="login" action="" method="POST" autocomplete="off">
+	<form id="login" name="login" action="" method="POST" autocomplete="off">
 		<label for="emailInput">Email</label>
 		<input type="email" id="emailInput" placeholder="sergey@verily.com" />
 		<label for="passwordInput">Password</label>

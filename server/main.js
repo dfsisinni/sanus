@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
 const Drugs = new Mongo.Collection('drugs');
+const userInfo = new Mongo.Collection('userInfo');
 
 
 Meteor.startup(() => {
@@ -21,4 +22,25 @@ Meteor.startup(() => {
 			});
 		}
 	}));
+});
+
+Meteor.methods({
+	'registerUser' (user) {
+
+		check(user.name, String);
+		check(user.email, String);
+		check(user.password, String);
+
+		Accounts.createUser({
+			email: user.email,
+			password: user.password
+		});
+
+		userInfo.insert({
+			id: Meteor.userId(),
+			name: user.name
+		});
+
+
+	}
 });
