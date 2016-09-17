@@ -9,3 +9,9 @@ Template.patientDash.helpers({
 		return moment().format('MMMM D, YYYY');
 	}
 });
+
+Template.patientDash.events({
+	'click .logout-btn': function () {
+		Meteor.logout();
+	}
+});

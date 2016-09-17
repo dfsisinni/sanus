@@ -40,6 +40,11 @@
 	background-color: rgba(0, 0, 0, 0.36);
 	color: #CCC;
 	border-radius: 0 0 0 3px;
+	border: 1px solid transparent;
+}
+.profile-image .logout-btn:focus {
+	opacity: 0.6;
+	border: 1px solid black;
 }
 
 .profile-details {
