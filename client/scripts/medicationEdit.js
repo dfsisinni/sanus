@@ -90,8 +90,11 @@ Template.medicineEdit.events({
 			if (e) {
 				return alert(e.reason);
 			};
-			console.log('hit')
-			Router.go('/med/' + Router.current().params.medId);
+			if (Meteor.user().profile.type === 'patient') {
+				Router.go('/med/' + Router.current().params.medId);
+			} else {
+				Router.go('/');
+			};
 		});
 	}
 });
