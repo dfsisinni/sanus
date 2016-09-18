@@ -6,16 +6,22 @@
 		<input type="text" name="searchMedications" id="searchMedications" placeholder="Ex. Tylenol" />
 		<img src="/resources/images/search.png" class="search-btn" />
 		<span>Search results:</span>
+
+
+		{{#if loading}}
+			<div class="loadingDiv" style="display:block;"></div>
+		{{/if}}
+		
 		<ul>
-			<li>
-				<a href="/search/{{medicationId}}">Tylenol for kids</a>
-			</li>
-			<li>
-				<a href="/search/{{medicationId}}">Tylenol for kids</a>
-			</li>
-			<li>
-				<a href="/search/{{medicationId}}">Tylenol for kids</a>
-			</li>
+			{{#each searchResults}}
+				{{> searchResult}}
+			{{/each}}
 		</ul>
 	</div>
+</template>
+
+<template name="searchResult">
+	<li>
+		<a href="/search/{{id}}">{{val}}</a>
+	</li>
 </template>
