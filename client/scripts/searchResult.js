@@ -21,10 +21,13 @@ Template.searchResultLanding.destroyed = function () {
 
 Template.searchResultLanding.created = function () {
 	var resp = Session.get('mountedSearchResult');
-	Meteor.call('getConflicts', {
-		webmd: resp.id,
+	var data = {
+		wedmd: resp.id,
 		name: resp.text,
 		query: Session.get('latestQuery')
+	};
+	Meteor.call('getConflicts', {
+		data
 	}, function (err, res) {
 		if (res) {
 			Session.set('searchSelectionHasConflict', res);

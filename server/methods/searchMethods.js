@@ -1,15 +1,19 @@
+var Future = Npm.require( 'fibers/future' ); 
+
 Meteor.methods({
 	'getDrugList' (query) {
 		var result = Meteor.http.call("POSt", "http://www.webmd.com/api/qrl/LookupService.ashx?jsonp=jQuery18204622211846722426_1473889064854&format=json&metadata=rxotc%2Cgeneric_name%2Cmnid&q=" + query + "&s=3&sz=125&_=1473889942505");
 		return result;
 	},
 
-	'getConflicts' (data) {
+	'getConflicts' (stuff) {
 		//WEBMD CHECKS
 
-		var webmd = data.webmd;
-		var name = data.name;
-		var query = data.query;
+		console.log(stuff);
+
+		var webmd = stuff.data.wedmd;
+		var name = stuff.data.name;
+		var query = stuff.data.query;
 
 		var data = {
 			"DrugType": "FDB",
@@ -21,18 +25,29 @@ Meteor.methods({
 		var response = {};
 
 		var webmdIds = [];
-		wedmdIds[0] = wedmd;;
+		console.log(webmd);
+		webmdIds[0] = webmd;
 		var meds = Meteor.user().profile.medications;
-		for (var i = 1; i <= meds.length; i++) {
+
+		if (meds != null) {
+			for (var i = 1; i <= meds.length; i++) {
 			webmdIds[i] = meds[i-1].apiId;
 		}
 
-		data.DrugIds = wedmdIds;
+		console.log('here');
+
+		data.DrugIds = webmdIds.slice();
 
 		if (data.DrugIds.length > 0) {
-			var result = Meteor.http.call("POST", "http://www.webmd.com/drugs/api/DrugInteractionChecker.svc/drugsinteraction", {"data": JSON.stringify(data)});
-			
-			var data = result.data;
+			console.log(JSON.stringify(data));
+
+			var future = new Future();
+			Meteor.http.call("POST", "http://www.webmd.com/drugs/api/DrugInteractionChecker.svc/drugsinteraction", {"data": data}, function (error, result) {
+				future.return(result.data);
+			});
+			future.wait();
+			console.log(future.value.data);
+			var data = future.value.data;
 			var medicationConflicts = [];
 			for (var i = 0; i < data.length; i++) {
 				var drug1 = {
@@ -48,8 +63,8 @@ Meteor.methods({
 				if (drug1.id != webmd && drug2.id != webmd) {
 					continue;
 				}
-
-				var severity = data[i].MetaInfo.Severity;
+				console.log(data[i].MetaInfo);
+				var severity = data[i].MetaInfo[0].Severity;
 				severity = severity.toLowerCase();
 
 				//severity variable
@@ -61,7 +76,7 @@ Meteor.methods({
 					severity = "minor";
 				}
 
-				var message = data[i].Subject.Name + data[i].MetaInfo.DirectionalityEffect1 + data[i].Objet.name + data[i].MetaInfo.DirectionalityEffect2 + data[i].Mechanism;
+				var message = data[i].Subject.Name + data[i].MetaInfo[0].DirectionalityEffect1 + data[i].Object.name + data[i].MetaInfo[0].DirectionalityEffect2 + data[i].MetaInfo[0].Mechanism;
 
 				var conflict = {
 					"drug1": drug1,
@@ -77,6 +92,9 @@ Meteor.methods({
 			response.medicationConflicts = medicationConflicts.slice();
 
 		}
+		}
+
+		
 		name = encodeURIComponent(name);
 		query = encodeURIComponent(query);
 
@@ -98,6 +116,7 @@ Meteor.methods({
 		}
 
 		response.allergies = allergies.slice();
+		console.log(response);
 
 		return response;
 
