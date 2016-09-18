@@ -64,10 +64,10 @@ Meteor.methods({
 					"drug1": drug1,
 					"drug2": drug2,
 					"severity": severity,
-					"message" message
+					"message": message
 				};
 
-				medicationConflicts[.push(conflict);
+				medicationConflicts.push(conflict);
 
 			}
 
