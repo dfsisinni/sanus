@@ -22,7 +22,7 @@
 		</form>
 	</div>
 
-	{{#if patientView}}
+	{{#if patientNumber}}
 		{{> patient}}
 	{{/if}}
 
@@ -30,6 +30,6 @@
 
 <template name="patient">
 	<div class="dash-card patient-lookup">
-		<h2></h2>
+		<h2>{{patientData.name}}</h2>
 	</div>
 </template>

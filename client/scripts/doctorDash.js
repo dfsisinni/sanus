@@ -1,7 +1,7 @@
 
 
-Template.doctorDash.rendered = function () {
-	Session.set("patientNumber", null);
+Template.doctorDash.created = function () {
+	Session.set("patientNumber", false);
 };
 
 Template.doctorDash.helpers({
@@ -13,8 +13,21 @@ Template.doctorDash.helpers({
 		return moment().format('MMMM D, YYYY');
 	},
 
-	patientView: function () {
-		return Session.get("patientNumber") != null;
+	patientNumber: function () {
+		return Session.get("patientNumber");
+	},
+
+	
+});
+
+Template.patient.helpers({
+	patientData: function () {
+		if (Session.get("patientNumber") == false) {
+			return null;
+		} else {
+			console.log(Meteor.users.find({"profile.userNumber" : parseInt(Session.get("patientNumber"))}).fetch()[0].profile);
+			return Meteor.users.find({"profile.userNumber" : parseInt(Session.get("patientNumber"))}).fetch()[0].profile;
+		}
 	}
 });
 
@@ -26,10 +39,10 @@ Template.doctorDash.events({
 		var userNumber = target.patientLookup.value;
 
 
-		if (Meteor.users.find({"profile.userNumber": parseFloat(userNumber)}).count() > 0) {
-			Session.set("patientNumber", userNumber);
+		if (Meteor.users.find({"profile.userNumber": parseInt(userNumber)}).count() > 0) {
+			Session.set("patientNumber", parseInt(userNumber));
 		} else {
-			Session.set("patientNumber", null);
+			Session.set("patientNumber", false);
 		}
 	},
 });
