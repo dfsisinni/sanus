@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-const Drugs = new Mongo.Collection('drugs');
-const Allergens = new Mongo.Collection('allergens');
+// const Drugs = new Mongo.Collection('drugs');
+// const Allergens = new Mongo.Collection('allergens');
 
 
 Meteor.startup(() => {
