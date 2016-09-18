@@ -122,7 +122,6 @@ Meteor.methods({
 
 		response.allergies = allergies.slice();
 		console.log(response);
-*/
 		return response;
 
 	},
