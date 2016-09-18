@@ -41,7 +41,7 @@ Template.medicationSearch.events({
 				Session.set("searchResults", ref);	
 			});
 		};
-	}
+	},
 });
 
 Template.medicationSearch.helpers({
@@ -52,4 +52,13 @@ Template.medicationSearch.helpers({
 	loading: function () {
 		return Session.get("loading");
 	},
+});
+
+Template.searchResult.events({
+	'click .search-result-item': function (e) {
+		e.preventDefault();
+		Session.set('mountedSearchResult', this);
+		Session.set('latestQuery', $('#searchMedications').val());
+		Router.go('/search-result');
+	}
 });
