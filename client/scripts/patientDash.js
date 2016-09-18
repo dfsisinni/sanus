@@ -34,5 +34,38 @@ Template.patientDash.events({
 	},
 	'click .add-medication': function () {
 		Session.set('searchMedications', true);
+	},
+	'click .remove-med': function(e) {
+		var $thisId = $(e.currentTarget).attr('data-id');
+		if(confirm('Are you sure you want to delete '+this.name+'?')){
+		  Meteor.call('removeMedication', $thisId, function (e) {
+		  	if (e) {
+		  		return alert(e.reason);
+		  	};
+		  });
+		}
 	}
+});
+
+Template.notification.events({
+	'click .accept': function () {
+		var $thisId = this._id;
+		if(confirm('Are you sure you want to delete '+this.name+'?')){
+		  Meteor.call('confirmRecommendation', $thisId, function (e) {
+		  	if (e) {
+		  		return alert(e.reason);
+		  	};
+		  });
+		}
+	},
+	'click .reject': function () {
+		var $thisId = this._id;
+		if(confirm('Are you sure you want to delete '+this.name+'?')){
+		  Meteor.call('removeRecommendation', $thisId, function (e) {
+		  	if (e) {
+		  		return alert(e.reason);
+		  	};
+		  });
+		}
+	},
 });

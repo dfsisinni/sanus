@@ -25,7 +25,6 @@ Template.patient.helpers({
 		if (Session.get("patientNumber") == false) {
 			return null;
 		} else {
-			console.log(Meteor.users.find({"profile.userNumber" : parseInt(Session.get("patientNumber"))}).fetch()[0].profile);
 			return Meteor.users.find({"profile.userNumber" : parseInt(Session.get("patientNumber"))}).fetch()[0].profile;
 		}
 	},

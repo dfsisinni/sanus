@@ -2,27 +2,25 @@
 	<div style="height:1px;"></div>
 	<div class="dash-card medicineView">
 		<a href="/" class="closeModal">&times;</a>
-		<h1>Tylenol</h1>
+		<h1>{{medicine.name}}</h1>
 		<hr />
-		<h2>Conflicts</h2>
-		<p>Conflicts with x, y and z. Allergic reactions to those with x, y and z.</p>
+		{{#if medicine.conflictDetails}}
+			<h2>Conflicts</h2>
+			<p>{{conflictText}}</p>
+		{{/if}}
 		
 		<h2>Prefrences</h2>
-		<p><b>Start:</b> September 13th, 2016</p>
-		<p><b>End:</b> October 16th, 2016</p>
-		<p><b>Directions &amp; Notes:</b> Take it twice a day when swaggin' ~</p>
-		
-		<p>...other details...</p>
-		<h2>Warning</h2>
-		<p>Default consumption warning.</p>
+		<p><b>Start:</b> {{startDateFormatted}}</p>
+		<p><b>End:</b> {{endDateFormatted}}</p>
+		<p><b>Directions &amp; Notes:</b> {{{medicine.directions}}}</p>
 		
 		<hr />
 
-		<button name="addToMedicines" class="add-to-medicines" id="addToMedicines">
+		<button name="deleteMedicine" class="add-to-medicines" id="deleteMedicine">
 			Delete
 		</button>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="/med/id/edit" class="add-to-medicines" id="editMedicine">
+		<a href="/med/{{medicine._id}}/edit" class="add-to-medicines" id="editMedicine">
 			Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</a>
 	</div>

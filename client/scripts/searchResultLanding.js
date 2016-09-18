@@ -15,6 +15,22 @@ Template.searchResultLanding.helpers({
 	}
 });
 
+Template.searchResultLanding.events({
+	'click #addToMedicines': function () {
+		Meteor.call('addMedication', {
+			conflictData: Session.get('searchSelectionHasConflict'),
+			other: Session.get('mountedSearchResult'),
+			patientNumber: Session.get('patientNumber'),
+			queryUsed: Session.get('latestQuery'),
+		}, function (e, r) {
+			if (e) {
+				return alert(e.message);
+			};
+			Router.go('/med/' + r + '/edit');
+		});
+	}
+});
+
 Template.searchResultLanding.destroyed = function () {
 	Session.set('searchSelectionHasConflict', undefined);
 };

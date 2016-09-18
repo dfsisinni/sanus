@@ -1,7 +1,7 @@
 <template name="medicineEdit">
 	<div style="height:1px;"></div>
 	<div class="dash-card medicineView">
-		<h1>Tylenol</h1>
+		<h1>{{medicine.name}}</h1>
 		<hr />
 		<h2>Edit</h2>
 		<form name="editMedicine" id="editMedicine" method="POST" action="" class="edit-form">
@@ -54,7 +54,7 @@
 
 
 			<label>Directions</label>
-			<textarea name="description" placeholder="Directions or notes on the medication"></textarea>
+			<textarea name="description" placeholder="Directions or notes on the medication" value="{{medicine.directions}}"></textarea>
 			
 			<hr />
 
@@ -62,7 +62,7 @@
 				Save
 			</button>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="/med/id" class="add-to-medicines" id="cancel">
+			<a href="/med/{{medicine._id}}" class="add-to-medicines" id="cancel">
 				Cancel
 			</a>
 		</form>

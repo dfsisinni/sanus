@@ -64,3 +64,28 @@ Template.medicineEdit.helpers({
 		return years;
 	}
 });
+
+Template.medicineEdit.events({
+	'submit #editMedicine': function (e) {
+		e.preventDefault();
+
+		var startDate, dd = $('#sDay').val(), mo = $('#sMonth').val(), year = $('#sYear').val();
+		startDate = new Date(year, mo, dd);
+
+		var endDate, dd = $('#eDay').val(), mo = $('#eMonth').val(), year = $('#eYear').val();
+		endDate = new Date(year, mo, dd);
+
+		var directions = $('textarea[name="description"]').val();
+
+		Meteor.call('updateMedicine', {
+			id: Router.current().params.medId,
+			startDate, endDate, directions,
+			patientNumber: Session.get('patientNumber'),
+		}, function (e) {
+			if (e) {
+				return alert(e.reason);
+			};
+			Router.go('/med/' + Router.current().params.medId);
+		});
+	}
+});
