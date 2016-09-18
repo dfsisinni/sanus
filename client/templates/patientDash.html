@@ -1,5 +1,11 @@
 <template name="patientDash">	
 	<div style="height:1px;"></div>
+	<div class="qrOverlay">
+		<span>&times;</span>
+		<h2>Patient code</h2>
+		<img src="https://api.qrserver.com/v1/create-qr-code/?size=96x96&data={{currentUser.profile.userNumber}}" />
+		<input type="text" class="selectOnClick" value="{{currentUser.profile.userNumber}}" readonly />
+	</div>
 	<div class="dash-card profile">
 		<div class="profile-image" style="background-image:url({{profileImageUrl}})">
 			<button class="showQr">Patient Code</button>
@@ -14,10 +20,8 @@
 		<h2>Notifications</h2>
 		{{#if notifications}}
 			<ul>
-				{{#each notification in notifications}}
-					{{#with notification}}
-						{{> notification}}
-					{{/with}}
+				{{#each notifications}}
+					{{> notification}}
 				{{/each}}
 			</ul>
 		{{else}}
@@ -28,28 +32,30 @@
 		<h2>Medications</h2>
 		{{#if medications}}
 			<ul>
-				{{#each medication in medications}}
+				{{#each medications}}
 					<li>
-						<a href="/med/{{medication._id}}">{{medication.name}}</a>
-						<button class="remove-med" data-id="{{medication._id}}">&times;</button>
+						<a href="/med/{{this._id}}">{{this.name}}</a>
+						<button class="remove-med" data-id="{{this._id}}">&times;</button>
 					</li>
 				{{/each}}
 			</ul>
+		{{else}}
+			<p class="empty-state">No medications.</p>
 		{{/if}}
-		<button class="add-medication">+ medication</button>
+		<button class="add-medication">+ add</button>
 	</div>
 </template>
 
 <template name="notification">
-	<li>
+	<li class="notif-item">
 		<span>
 			{{{notificationText}}}
 		</span>
 		{{#if notificationActions}}
 			<div class="actions-box">
-				<button class="accept"><img src="" /></button>
+				<button class="accept"><img src="/resources/images/checkmark.png" /></button>
 				{{#if isRecommendation}}
-					<button class="reject"><img src="" /></button>
+					<button class="reject">&times;</button>
 				{{/if}}
 			</div>
 		{{/if}}

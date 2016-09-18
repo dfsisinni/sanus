@@ -61,9 +61,9 @@ Accounts.onCreateUser(function(options, user) {
 	check(options.profile.name, String);
 	check(options.profile.type, String);
 
-	var userNumber = (Math.random() * 1000000);
+	var userNumber = Math.floor(Math.random() * 1000000);
 	while(Meteor.users.findOne({"profile.userNumber": userNumber})) {
-		userNumber = (Math.random() * 1000000);
+		userNumber = Math.floor(Math.random() * 1000000);
 	};
 
 	user.profile =  options.profile;

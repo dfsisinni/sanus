@@ -7,6 +7,13 @@ Template.patientDash.helpers({
 	},
 	registrationDate: function() {
 		return moment().format('MMMM D, YYYY');
+	},
+	notifications: function() {
+		return ([{
+			notificationText: 'Dr. Swagman has prescribed u with yoloswag',
+			notificationActions: true,
+			isRecommendation: true,
+		}]);
 	}
 });
 
@@ -16,5 +23,14 @@ Template.patientDash.events({
 		Meteor.logout(function() {
 			$('#logoutOver').remove();
 		});
+	},
+	'click .showQr': function () {
+		$('.qrOverlay').show();
+	},
+	'click .qrOverlay span': function () {
+		$('.qrOverlay').hide();
+	},
+	'click .selectOnClick': function (e) {
+		$(e.target).select();
 	}
 });

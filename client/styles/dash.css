@@ -4,9 +4,9 @@
 	position: relative;
 	margin: 12px auto;
 	border-radius: 6px;
-	border: 1px solid #EBEBEB;
-	box-shadow: 0px 3px 12px -6px #999;
+	box-shadow: 0px 1px 18px -3px #999;
 	padding: 18px 12px;
+	border-bottom: 2px solid #68AD99;
 	background-color: #FCFCFC;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -109,3 +109,28 @@ p.empty-state {
 	opacity: 0.4;
 }
 
+.notif-item {
+	display: flex;
+}
+.notif-item span {
+	display: block;
+	flex-grow: 2;
+}
+.actions-box {
+	flex-grow: 1;
+	width: 60px; height: 60px;
+}
+.notif-item button {
+	background-color: transparent;
+	border: 0; outline: none;
+	cursor: pointer;padding: 6px;
+	font-size: 21px;
+	float: left;
+	line-height: 15px;
+	color: #CCC;
+}
+.notif-item img {
+	width: 21px; 
+	position: relative;
+	top: 1px;
+}
