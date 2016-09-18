@@ -1,6 +1,6 @@
 Template.patientDash.helpers({
 	profileImageUrl: function () {
-		return '/resources/images/default-pic.jpg';
+		return Meteor.user().profile.profileImageUrl || '/resources/images/default-pic.jpg';
 	},
 	medicineCount: function() {
 		return !0? 'No': 0;

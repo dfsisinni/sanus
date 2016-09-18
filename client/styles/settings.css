@@ -1,0 +1,65 @@
+.current-image {
+	height: 180px;
+	margin: 12px 0;
+	border: 1px solid #DEDEDE;
+	border-radius: 3px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: 0px 3px 12px -6px black;
+}
+
+.settings form {
+	display: block;
+	margin: 12px 0 0;
+}
+
+.settings>label {
+	font-size: 11px;
+	display: block;
+	margin-bottom: 6px;
+}
+.settings form label, .settings form span {
+	display: block;
+	font-size: 11px;
+	margin-bottom: 6px; margin-top: 12px;
+}
+
+.settings form input:not([type="checkbox"]) {
+	display: block; width: 100%;
+	margin: 3px 0 12px 0;
+	padding: 3px 9px;
+	height: 36px;
+
+	outline: none; border: none;
+	border-bottom: 2px solid #EBEBEB;
+	border-radius: 3px;
+
+	font-size: 18px;
+	color: #756C53;
+
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.settings form input:not([type="checkbox"]):focus {
+	border-bottom: 1px solid #F7FAF9;
+	background-color: #fff;
+	box-shadow: 0px 6px 24px -12px #DEDEDE;
+	height: 41px;
+}
+
+.settings form input[type="checkbox"] {
+	margin-right: 6px;
+}
+
+.settings label.allergy-label {
+	font-size: 16px;
+}

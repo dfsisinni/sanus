@@ -31,3 +31,5 @@ accounts-password
 momentjs:moment
 email
 
+cfs:gridfs
+cfs:standard-packages

@@ -1,0 +1,35 @@
+<template name="settings">
+	
+	<div style="height:1px;"></div>
+	<div class="dash-card settings">
+		<a href="/" class="closeModal">&times;</a>
+		<h1>Settings</h1>
+		<div class="current-image" style="background-image:url('{{profileImageUrl}}')"></div>
+		<label for="profileImage">Change profile image</label>
+		<input type="file" name="profileImage" id="profileImage" />
+
+		<form name="settingsForm" id="settingsForm" action="" method="POST">
+			<label for="nameInput">Name:</label>
+			<input type="text" id="nameInput" name="nameInput" value="{{currentUser.profile.name}}" />
+			
+			<label for="emailInput">Email:</label>
+			<input type="email" id="emailInput" name="emailInput" value="{{currentEmail}}" />
+
+			<label for="passwordInput">New Password:</label>
+			<input type="password" id="passwordInput" name="passwordInput" placeholder="change your password..." />
+			<label for="passwordInput">Old Password:</label>
+			<input type="password" id="passwordOldInput" name="passwordOldInput" placeholder="Confirm your current password" />
+			
+			<span>Allergies:</span>
+			{{#each allergies}}
+				<label class="allergy-label">
+					<input name="allergiesInput" type="checkbox" value="{{allergy}}" checked="{{isAllergy}}" />
+					{{allergy}}
+				</label>
+			{{/each}}
+
+			<button type="submit" class="save add-to-medicines">Save</button>
+		</form>
+	</div>
+	<div style="height:1px;"></div>
+</template>

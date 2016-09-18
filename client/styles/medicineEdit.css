@@ -37,3 +37,9 @@
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
+
+.edit-form textarea:focus {
+	border-bottom: 1px solid #F7FAF9;
+	background-color: #fff;
+	box-shadow: 0px 6px 24px -12px #DEDEDE;
+}
