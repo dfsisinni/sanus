@@ -1,5 +1,9 @@
 <template name="reset">
 	<div style="height:1px;"></div>
+	<div class="splash-card first">
+		<a href="/" class="closeModal" style="line-height:33px;left:0;text-align:center;width:100%;color:#999;">&larr;</a>
+	</div>
+
 	<div class="splash-card first splash-form">
 		<h1>Forgot your password?</h1>
 		<form name="passwordResetInit" id="passwordResetInit" method="POST" action="" charset="utf-8">
@@ -13,6 +17,10 @@
 
 <template name="resetComplete">
 	<div style="height:1px;"></div>
+	<div class="splash-card first">
+		<a href="/" class="closeModal" style="line-height:33px;left:0;text-align:center;width:100%;color:#999;">&larr;</a>
+	</div>
+	
 	<div class="splash-card first splash-form">
 		<h1>Enter your new password</h1>
 		<form name="passwordResetComplete" id="passwordResetComplete" method="POST" action="" charset="utf-8">
