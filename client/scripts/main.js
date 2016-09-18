@@ -16,7 +16,9 @@ Template.signup.events({
 		Accounts.createUser(user, function (error) {
 			if (error) {
 				toastr.error("Unable to create account!");
-			} 
+			} else {
+				Session.set('isFirstSignup', true);
+			}
 		});
 	},
 });

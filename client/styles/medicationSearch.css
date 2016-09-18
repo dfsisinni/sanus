@@ -15,7 +15,7 @@
 	height: 48px; width: 48px;
 	line-height: 48px; text-align: center;
 	outline: none; border: 0; 
-	background-color: #F7F7F7;
+	background-color: transparent;
 	color: red;
 	cursor: pointer;
 	font-size: 18px;

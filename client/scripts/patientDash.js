@@ -6,7 +6,7 @@ Template.patientDash.helpers({
 		return !0? 'No': 0;
 	},
 	registrationDate: function() {
-		return moment().format('MMMM D, YYYY');
+		return moment(Meteor.user().profile.createdAt).fromNow();
 	},
 	notifications: function() {
 		return ([{

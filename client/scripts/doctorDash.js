@@ -45,4 +45,10 @@ Template.doctorDash.events({
 			Session.set("patientNumber", false);
 		}
 	},
+	'click .logout-btn': function () {
+		$('body').append('<div id="logoutOver" style="display:block;" class="loadingDiv"></div>');
+		Meteor.logout(function() {
+			$('#logoutOver').remove();
+		});
+	},
 });
