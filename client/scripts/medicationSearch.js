@@ -1,4 +1,5 @@
 Template.medicationSearch.created = function () {
+	Session.set("query", "");
 	Session.set("searchResults", null);
 	Session.set("loading", false);
 };
@@ -11,6 +12,7 @@ Template.medicationSearch.events({
 	'click .search-btn': function (event) {
 		var value = document.getElementById('searchMedications').value;
 		
+		Session.set("query", value);
 
 		Session.set("loading", true);
 		Meteor.call('getDrugList', value, function (error, data) {
@@ -31,6 +33,6 @@ Template.medicationSearch.helpers({
 	},
 
 	loading: function () {
-		return Session.get("lodaing");
+		return Session.get("loading");
 	},
 });
