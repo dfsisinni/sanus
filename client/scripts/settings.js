@@ -1,3 +1,6 @@
+Template.settings.rendered = function () {
+	Session.set('isFirstSignup', false);
+};
 Template.settings.helpers({
 	profileImageUrl: function () {
 		if (Meteor.user()) {

@@ -9,26 +9,10 @@ Template.patientDash.helpers({
 		return moment(Meteor.user().profile.createdAt).fromNow();
 	},
 	notifications: function() {
-		return ([{
-			notificationText: 'Dr. Swagman has prescribed u with yoloswag',
-			notificationActions: true,
-			isRecommendation: true,
-		}]);
+		return Meteor.user() && Meteor.user().profile.recommendations;
 	},
 	medications: function() {
-		return ([{
-			"_id": "asdf",
-			"name": "Tylenol", },
-			{
-			"_id": "asdf",
-			"name": "Tylenol",},
-			{
-			"_id": "asdf",
-			"name": "Tylenol",},
-			{
-			"_id": "asdf",
-			"name": "Tylenol",
-		}]);
+		return Meteor.user() && Meteor.user().profile.medications;
 	}
 });
 

@@ -49,15 +49,11 @@
 <template name="notification">
 	<li class="notif-item">
 		<span>
-			{{{notificationText}}}
+			{{prescribedBy}} prescribed {{name}} to you
 		</span>
-		{{#if notificationActions}}
-			<div class="actions-box">
-				<button class="accept"><img src="/resources/images/checkmark.png" /></button>
-				{{#if isRecommendation}}
-					<button class="reject">&times;</button>
-				{{/if}}
-			</div>
-		{{/if}}
+		<div class="actions-box">
+			<button class="accept"><img src="/resources/images/checkmark.png" /></button>
+			<button class="reject">&times;</button>
+		</div>
 	</li>
 </template>
