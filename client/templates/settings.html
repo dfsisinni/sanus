@@ -19,14 +19,15 @@
 			<input type="password" id="passwordInput" name="passwordInput" placeholder="change your password..." />
 			<label for="passwordInput">Old Password:</label>
 			<input type="password" id="passwordOldInput" name="passwordOldInput" placeholder="Confirm your current password" />
-			
-			<span>Allergies:</span>
-			{{#each allergies}}
-				<label class="allergy-label">
-					<input name="allergiesInput" type="checkbox" value="{{allergy}}" checked="{{isAllergy}}" />
-					{{allergy}}
-				</label>
-			{{/each}}
+			{{#if isPatient}}
+				<span>Allergies:</span>
+				{{#each allergies}}
+					<label class="allergy-label">
+						<input name="allergiesInput" type="checkbox" value="{{allergy}}" checked="{{isAllergy}}" />
+						{{allergy}}
+					</label>
+				{{/each}}
+			{{/if}}
 
 			<button type="submit" class="save add-to-medicines">Save</button>
 		</form>

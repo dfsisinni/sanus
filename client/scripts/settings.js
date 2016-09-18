@@ -16,6 +16,9 @@ Template.settings.helpers({
 		if (Meteor.user()) {
 			return Array.isArray(Meteor.user().profile.allergies) && Meteor.user().profile.allergies.indexOf(this.allergy) !== -1;
 		};
+	},
+	isPatient: function() {
+		return Meteor.user() && Meteor.user().profile.type === 'patient';
 	}
 });
 
