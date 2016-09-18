@@ -5,6 +5,80 @@ Meteor.methods({
 		return result;
 	},
 
+	'getConflicts' (webmd, query) {
+		//WEBMD CHECKS
+
+		var data = {
+			"DrugType": "FDB",
+			"MaxSecurityLevel": 4,
+			"MinSecurityLevel": 0,
+			"MetaInfoType": "Consumer"
+		};
+
+		var response = {};
+
+		var webmdIds = [];
+		wedmdIds[0] = wedmd;;
+		var meds = Meteor.user().profile.medications;
+		for (var i = 1; i <= meds.length; i++) {
+			webmdIds[i] = meds[i-1].apiId;
+		}
+
+		data.DrugIds = wedmdIds;
+
+		if (data.DrugIds.length > 0) {
+			var result = Meteor.http.call("POST", "http://www.webmd.com/drugs/api/DrugInteractionChecker.svc/drugsinteraction", {"data": JSON.stringify(data)});
+			
+			var data = result.data;
+			var medicationConflicts = [];
+			for (var i = 0; i < data.length; i++) {
+				var drug1 = {
+					id: data[i].Object.VendorID,
+					name: data[i].Object.Name
+				};
+
+				var drug2 = {
+					id: data[i].Subject.VendorID,
+					name: data[i].Subject.Name
+				};
+
+				if (drug1.id != webmd && drug2.id != webmd) {
+					continue;
+				}
+
+				var severity = data[i].MetaInfo.Severity;
+				severity = severity.toLowerCase();
+
+				//severity variable
+				if (severity.includes("significant")) {
+					severity = "significant";
+				} else if (severity.includes("moderate")) {
+					severity = "moderate";
+				} else if (severity.includes("minor")) {
+					severity = "minor";
+				}
+
+				var message = data[i].Subject.Name + data[i].MetaInfo.DirectionalityEffect1 + data[i].Objet.name + data[i].MetaInfo.DirectionalityEffect2 + data[i].Mechanism;
+
+				var conflict = {
+					"drug1": drug1,
+					"drug2": drug2,
+					"severity": severity,
+					"message" message
+				};
+
+				medicationConflicts[.push(conflict);
+
+			}
+
+			response.medicationConflicts = medicationConflicts;
+
+		}
+
+		
+
+	},
+
 	sendEmail: function (to, from, type, text) {
 
 
