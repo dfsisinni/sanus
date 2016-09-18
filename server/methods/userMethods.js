@@ -81,10 +81,10 @@ Meteor.methods({
 
 		var allAllergies = Meteor.user().profile.allergies;
 		for (var i = 0; i < allAllergies.length; i++) {
-			var result = Meteor.http.call("POSt", "https://api.fda.gov/drug/label.json?search=generic_name:[" + name + "+TO+" + name + "]+AND+inactive_ingredient:" +  encodeURIComponent(allAllergies[i])"&limit=1");
+			var result = Meteor.http.call("POSt", "https://api.fda.gov/drug/label.json?search=generic_name:[" + name + "+TO+" + name + "]+AND+inactive_ingredient:" +  encodeURIComponent(allAllergies[i]) + "&limit=1");
 			var obj = JSON.parse(result);
 			if (obj.results.total == 0) {
-				var result = Meteor.http.call("POSt", "https://api.fda.gov/drug/label.json?search=generic_name:[" + query + "+TO+" + query + "]+AND+inactive_ingredient:" +  encodeURIComponent(allAllergies[i])"&limit=1");
+				var result = Meteor.http.call("POSt", "https://api.fda.gov/drug/label.json?search=generic_name:[" + query + "+TO+" + query + "]+AND+inactive_ingredient:" +  encodeURIComponent(allAllergies[i]) + "&limit=1");
 				obj = JSON.parse(result);
 				if (obj.results.total == 0) {
 					continue;
