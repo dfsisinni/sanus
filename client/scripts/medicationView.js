@@ -5,6 +5,7 @@ Template.medicineView.events({
 		  	if (e) {
 		  		return alert(e.reason);
 		  	};
+		  	Router.go('/');
 		  });
 		}
 	}
