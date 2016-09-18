@@ -102,7 +102,7 @@ Meteor.methods({
 /*
 		var allAllergies = Meteor.user().profile.allergies;
 		for (var i = 0; i < allAllergies.length; i++) {
-			//var result = Meteor.http.call("POSt", "https://api.fda.gov/drug/label.json?search=generic_name:[" + name + "+TO+" + name + "]+AND+inactive_ingredient:" + allAllergies[i] + "&limit=1");
+			//var result = Meteor.http.call("POST", "https://api.fda.gov/drug/label.json?search=generic_name:[" + name + "+TO+" + name + "]+AND+inactive_ingredient:" + allAllergies[i] + "&limit=1");
 			//var obj = JSON.parse(result);
 			//if (obj.results.total == 0) {
 				var str = "https://api.fda.gov/drug/label.json?search=generic_name:[" + query + "+TO+" + query + "]+AND+inactive_ingredient:" +  allAllergies[i].valueOf() + "&limit=1";
