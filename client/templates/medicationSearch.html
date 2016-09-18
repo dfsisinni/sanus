@@ -1,0 +1,21 @@
+<template name="medicationSearch">
+	<div class="medication-search">
+		<button class="closeModal">&times;</button>
+		<h1>Search for a medicine</h1>
+		
+		<input type="text" name="searchMedications" id="searchMedications" placeholder="Ex. Tylenol" />
+		<img src="/resources/images/search.png" class="search-btn" />
+		<span>Search results:</span>
+		<ul>
+			<li>
+				<a href="/search/{{medicationId}}">Tylenol for kids</a>
+			</li>
+			<li>
+				<a href="/search/{{medicationId}}">Tylenol for kids</a>
+			</li>
+			<li>
+				<a href="/search/{{medicationId}}">Tylenol for kids</a>
+			</li>
+		</ul>
+	</div>
+</template>

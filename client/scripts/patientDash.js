@@ -32,5 +32,8 @@ Template.patientDash.events({
 	},
 	'click .selectOnClick': function (e) {
 		$(e.target).select();
+	},
+	'click .add-medication': function () {
+		Session.set('searchMedications', true);
 	}
 });

@@ -1,7 +1,12 @@
 <template name="dash">
+	{{#if searchMedications}}
+		{{> medicationSearch}}
+	{{/if}}
 	{{#if isPatient}}
 		{{> patientDash}}
 	{{else}}
-		{{> doctorDash}}
+		{{#if isDoctor}}
+			{{> doctorDash}}
+		{{/if}}
 	{{/if}}
 </template>

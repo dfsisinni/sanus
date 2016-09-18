@@ -1,0 +1,74 @@
+.medication-search {
+	position: fixed;
+	top: 0; left: 0;
+	height: 100%; width: 100%;
+	padding: 12px 18px;
+	background-color: white;
+	z-index: 10;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.closeModal {
+	position: absolute;
+	top: 0; right: 0;
+	height: 48px; width: 48px;
+	line-height: 48px; text-align: center;
+	outline: none; border: 0; 
+	background-color: #F7F7F7;
+	color: red;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+
+.medication-search input {
+	display: block;
+	width: 100%;
+	margin: 12px 0;
+	padding: 6px 9px;
+	padding-right: 49px;
+	border: 0; outline: none;
+	border-bottom: 2px solid #68AD99;
+	border-radius: 0 0 0 6px;
+
+	font-size: 18px;
+	color: #756C53;
+
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.medication-search .search-btn {
+	height: 30px;
+	margin-top: 9px;
+	cursor: pointer;
+	position: absolute;
+	top: 48px;
+	right: 18px;
+}
+
+.medication-search span {
+	font-size: 11px;
+	color: #787878;
+}
+
+.medication-search ul {
+	border-top: 1px solid #EBEBEB;
+	padding: 6px 0;
+}
+.medication-search ul li {
+	display: block;
+	list-style-type: none;
+}
+.medication-search ul li a {
+	display: block;
+	padding: 12px 9px;
+	box-shadow: 0px 3px 12px -9px #666;
+	background-color: rgba(0,0,0,0.03);
+}

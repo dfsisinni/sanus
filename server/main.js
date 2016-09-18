@@ -68,7 +68,7 @@ Accounts.onCreateUser(function(options, user) {
 
 	user.profile =  options.profile;
 	user.profile.userNumber = userNumber;
-
+	user.profile.createdAt = new Date();
 
 	 Meteor.setTimeout(function() {
       Accounts.sendVerificationEmail(user._id);
@@ -79,5 +79,5 @@ Accounts.onCreateUser(function(options, user) {
 
 
 Accounts.config({
-	sendVerificationEmail: true
+	sendVerificationEmail: true,
 });
