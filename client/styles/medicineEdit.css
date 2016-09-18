@@ -1,19 +1,39 @@
-.add-to-medicines {
+.edit-form {
+	display: block;
+}
+.edit-form label {
+	display: block;
+	font-size: 11px;
+	margin-top: 12px; margin-bottom: 6px;
+}
+.edit-form select {
+	width: 100%;
+	margin: 6px 0;
+	height: 36px;
+	display: block;
+}
+
+.edit-form textarea {
+	display: block; width: 100%;
+	max-width: 100%;
+	margin: 3px 0 12px 0;
+	padding: 3px 9px;
+	height: 60px;
+
 	outline: none; border: none;
-	cursor: pointer;
-	background-color: transparent;
-	font-weight: bold;
-	padding: 4px 24px 4px 3px;
-	color: #777;
-	border-radius: 0 0 0 3px;
-	border-bottom: 2px solid #68AD99;
-	text-align: left;
+	border-bottom: 2px solid #EBEBEB;
+	border-radius: 3px;
+
+	font-size: 18px;
+	color: #756C53;
+
 	-webkit-transition: all .3s;
 	   -moz-transition: all .3s;
 	    -ms-transition: all .3s;
 	     -o-transition: all .3s;
 	        transition: all .3s;
-}
-.add-to-medicines:focus {
-	opacity: 0.4;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }

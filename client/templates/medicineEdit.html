@@ -1,1 +1,67 @@
-<template name="medicineEdit"></template>
+<template name="medicineEdit">
+	<div style="height:1px;"></div>
+	<div class="dash-card medicineView">
+		<h1>Tylenol</h1>
+		<hr />
+		<h2>Edit</h2>
+		<form name="editMedicine" id="editMedicine" method="POST" action="" class="edit-form">
+			<label>Start date (dd/mm/yyyy):</label>
+			<select name="sDay" id="sDay">
+				<optgroup label="Days of the month">
+					{{#each dayNumbers}}
+						<option value="{{val}}">{{day}}</option>
+					{{/each}}
+				</optgroup>
+			</select>
+			<select name="sMonth" id="sMonth">
+				<optgroup label="Months">
+					{{#each months}}
+						<option value="{{val}}">{{month}}</option>
+					{{/each}}
+				</optgroup>
+			</select>
+			<select name="sYear" id="sYear">
+				<optgroup label="Years">
+					{{#each years}}
+						<option value="{{val}}">{{year}}</option>
+					{{/each}}
+				</optgroup>
+			</select>
+
+
+			<label>End date (dd/mm/yyyy):</label>
+			<select name="eDay" id="eDay">
+				<optgroup label="Days of the month">
+					{{#each dayNumbers}}
+						<option value="{{val}}">{{day}}</option>
+					{{/each}}
+				</optgroup>
+			</select>
+			<select name="eMonth" id="eMonth">
+				<optgroup label="Months">
+					{{#each months}}
+						<option value="{{val}}">{{month}}</option>
+					{{/each}}
+				</optgroup>
+			</select>
+			<select name="eYear" id="eYear">
+				<optgroup label="Years">
+					{{#each years}}
+						<option value="{{val}}">{{year}}</option>
+					{{/each}}
+				</optgroup>
+			</select>
+
+
+			<label>Directions</label>
+			<textarea name="description" placeholder="Directions or notes on the medication"></textarea>
+			
+			<hr />
+
+			<button type="submit" name="save" class="add-to-medicines" id="save">
+				Save
+			</button>
+		</form>
+	</div>
+	<div style="height:1px;"></div>
+</template>
