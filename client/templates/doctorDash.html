@@ -1,2 +1,25 @@
 <template name="doctorDash">
+	<div style="height:1px"></div>
+	<div class="dash-card profile">
+		<div class="profile-image" style="background-image:url({{profileImageUrl}})">
+			<button class="logout-btn">Logout</button>
+		</div>
+		<div class="profile-details">
+			<h1>{{currentUser.profile.name}}</h1><button class="settings-button"><img src="/resources/images/settings-ico.png" /></button>
+			<p>{{medicineCount}} active medications<br />Registered {{registrationDate}}</p>
+		</div>
+	</div>
+
+	<div class="dash-card patient-lookup">
+		<div style="display: inline-block; width: 100%;">
+			<h2 style="float: left;">Patient Lookup</h2>
+			<button style="border: none; background: none; float: right; height: 1px; zoom: 75%; padding-right: 4px;" type="submit"><img src="/resources/images/camera.svg"></button>
+		</div>
+		
+		<form class="lookup-form">
+			<input type="text" style="margin-top: 10px;" id="patientLookup" name="patientLookup" placeholder="Enter Patient Code" />
+			<button type="submit" style="text-align: center; margin-left: 7px;">Search</button>
+		</form>
+		
+	</div>
 </template>

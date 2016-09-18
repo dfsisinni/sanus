@@ -8,8 +8,8 @@ const Allergens = new Mongo.Collection('allergens');
 
 Meteor.startup(() => {
 	smtp = {
-		username: 'welcome@sanus.me',
-		password: 'welcomeme',
+		username: 'postmaster@sanus.me',
+		password: 'sanuspost',
 		server:   'smtp.mailgun.org',
 		port: 587
 	}
@@ -46,8 +46,8 @@ Meteor.startup(() => {
 		}
 	}));
 
-	Accounts.emailTemplates.siteName = "AwesomeSite";
-	Accounts.emailTemplates.from = "AwesomeSite Admin <accounts@example.com>"
+	Accounts.emailTemplates.siteName = "Sanus";
+	Accounts.emailTemplates.from = "Sanus Welcome <welcome@sanus.me>"
 	Accounts.emailTemplates.verifyEmail.text = function(user, url) {
 		console.log('here');
 		return 'Thank you for registering!  Please click on the following link to verify your email address: \r\n' + url;

@@ -105,6 +105,7 @@ p.empty-state {
 	     -o-transition: all .3s;
 	        transition: all .3s;
 }
+
 .add-medication:focus {
 	opacity: 0.4;
 }
@@ -134,3 +135,60 @@ p.empty-state {
 	position: relative;
 	top: 1px;
 }
+
+
+.lookup-form button {
+	outline: none; border: none;
+	cursor: pointer;
+	background-color: transparent;
+	font-weight: bold;
+	padding: 4px 24px 4px 3px;
+	color: #777;
+	border-radius: 0 0 0 3px;
+	border-bottom: 2px solid #68AD99;
+	text-align: left;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+
+.lookup-form button:focus {
+	/*border-bottom: 2px solid #F7FAF9;
+	background-color: #fff;
+	box-shadow: 0px 9px 24px -12px #DEDEDE;
+	padding: 6px 24px 6px 3px;*/
+	opacity: 0.4;
+}
+
+.lookup-form input {
+	display: block; width: 100%;
+	margin: 3px 0 12px 0;
+	padding: 3px 9px;
+	height: 36px;
+
+	outline: none; border: none;
+	border-bottom: 2px solid #EBEBEB;
+	border-radius: 3px;
+
+	font-size: 18px;
+	color: #756C53;
+
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.lookup-form input:focus {
+	border-bottom: 1px solid #F7FAF9;
+	background-color: #fff;
+	box-shadow: 0px 6px 24px -12px #DEDEDE;
+	height: 41px;
+}
+
