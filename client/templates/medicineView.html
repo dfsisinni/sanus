@@ -4,9 +4,11 @@
 		<a href="/" class="closeModal">&times;</a>
 		<h1>{{medicine.name}}</h1>
 		<hr />
-		{{#if medicine.conflictDetails}}
+		{{#if conflicts}}
 			<h2>Conflicts</h2>
-			<p>{{conflictText}}</p>
+			{{#with conflicts}}
+				<p>{{conflictText}}</p>
+			{{/with}}
 		{{/if}}
 		
 		<h2>Prefrences</h2>

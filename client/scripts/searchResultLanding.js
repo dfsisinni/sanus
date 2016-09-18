@@ -5,7 +5,7 @@ Template.searchResultLanding.helpers({
 	conflicts: function () {
 		var conflicts = Session.get('searchSelectionHasConflict');
 		var respId = Session.get('mountedSearchResult').id;
-		if (conflicts) {
+		if (conflicts && conflicts.medicationConflicts) {
 			var ToRet = {};
 			ToRet.text = "Conflicts with <b>" + conflicts.medicationConflicts.map(function (conflict) {
 				var conflicter = conflict.drug1.id === respId? conflict.drug2.name: conflict.drug1.name;
@@ -37,16 +37,18 @@ Template.searchResultLanding.destroyed = function () {
 
 Template.searchResultLanding.created = function () {
 	var resp = Session.get('mountedSearchResult');
-	var data = {
-		wedmd: resp.id,
-		name: resp.text,
-		query: Session.get('latestQuery')
-	};
-	Meteor.call('getConflicts', {
-		data
-	}, function (err, res) {
-		if (res) {
-			Session.set('searchSelectionHasConflict', res);
+	if (resp) {
+		var data = {
+			wedmd: resp.id,
+			name: resp.text,
+			query: Session.get('latestQuery')
 		};
-	});
+		Meteor.call('getConflicts', {
+			data
+		}, function (err, res) {
+			if (res) {
+				Session.set('searchSelectionHasConflict', res);
+			};
+		});
+	};
 };

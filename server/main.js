@@ -48,7 +48,6 @@ Meteor.startup(() => {
 	Accounts.emailTemplates.siteName = "Sanus";
 	Accounts.emailTemplates.from = "Sanus Welcome <welcome@sanus.me>"
 	Accounts.emailTemplates.verifyEmail.text = function(user, url) {
-		console.log('here');
 		return 'Thank you for registering!  Please click on the following link to verify your email address: \r\n' + url;
 	};
 
@@ -68,10 +67,6 @@ Accounts.onCreateUser(function(options, user) {
 	user.profile =  options.profile;
 	user.profile.userNumber = userNumber;
 	user.profile.createdAt = new Date();
-
-	 Meteor.setTimeout(function() {
-      Accounts.sendVerificationEmail(user._id);
-    }, 2 * 1000);
 
 	return user;
 });

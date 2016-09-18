@@ -62,6 +62,11 @@ Template.medicineEdit.helpers({
 			years.push({ val: i, year: i });
 		};
 		return years;
+	},
+	medicine: function() {
+		return Meteor.user().profile.medications.find(function(med) {
+			return med._id === Router.current().params.medId;
+		});
 	}
 });
 
@@ -85,6 +90,7 @@ Template.medicineEdit.events({
 			if (e) {
 				return alert(e.reason);
 			};
+			console.log('hit')
 			Router.go('/med/' + Router.current().params.medId);
 		});
 	}

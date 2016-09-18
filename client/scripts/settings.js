@@ -121,7 +121,7 @@ Template.settings.events({
 		        			var forceImage = setInterval(function() {
 		        				if (count === 3) {
 		        					clearInterval(forceImage);
-		        					window.reload();
+		        					location.reload();
 		        				};
 		        				$('.current-image').css('background-image', 'url()');
 		        				setTimeout(function() {
