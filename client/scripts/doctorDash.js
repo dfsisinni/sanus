@@ -28,7 +28,11 @@ Template.patient.helpers({
 			console.log(Meteor.users.find({"profile.userNumber" : parseInt(Session.get("patientNumber"))}).fetch()[0].profile);
 			return Meteor.users.find({"profile.userNumber" : parseInt(Session.get("patientNumber"))}).fetch()[0].profile;
 		}
-	}
+	},
+
+	allergySize: function () {
+		return Meteor.users.find({"profile.userNumber" : parseInt(Session.get("patientNumber"))}).fetch()[0].profile.allergies.length;
+	},
 });
 
 Template.doctorDash.events({
