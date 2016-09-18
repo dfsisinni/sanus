@@ -16,34 +16,34 @@ Meteor.startup(() => {
 	process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
 
 
-  	var fs = require('fs');
-	var path = require('path');
-	var fileName = process.env.PWD + path.join(__dirname, 'drugs.json');
+ //  	var fs = require('fs');
+	// var path = require('path');
+	// var fileName = process.env.PWD + path.join(__dirname, 'drugs.json');
 
 
-	fs.readFile(fileName, {encoding: 'utf-8'}, Meteor.bindEnvironment(function(err,data){
-		var obj = JSON.parse(data);
+	// fs.readFile(fileName, {encoding: 'utf-8'}, Meteor.bindEnvironment(function(err,data){
+	// 	var obj = JSON.parse(data);
 		
-		Drugs.remove({});
-		for (var i = 0; i < obj.length; i++) {
-			Drugs.insert({
-				id: obj[i].id,
-				name: obj[i].name
-			});
-		}
-	}));
+	// 	Drugs.remove({});
+	// 	for (var i = 0; i < obj.length; i++) {
+	// 		Drugs.insert({
+	// 			id: obj[i].id,
+	// 			name: obj[i].name
+	// 		});
+	// 	}
+	// }));
 
-	fileName = process.env.PWD + path.join(__dirname, 'allergens.json');
-	fs.readFile(fileName, {encoding: 'utf-8'}, Meteor.bindEnvironment(function (err, data) {
-		var obj = JSON.parse(data);
+	// fileName = process.env.PWD + path.join(__dirname, 'allergens.json');
+	// fs.readFile(fileName, {encoding: 'utf-8'}, Meteor.bindEnvironment(function (err, data) {
+	// 	var obj = JSON.parse(data);
 
-		Allergens.remove({});
-		for (var i = 0; i < obj.length; i++) {
-			Allergens.insert({
-				name: obj[i]
-			});
-		}
-	}));
+	// 	Allergens.remove({});
+	// 	for (var i = 0; i < obj.length; i++) {
+	// 		Allergens.insert({
+	// 			name: obj[i]
+	// 		});
+	// 	}
+	// }));
 
 	Accounts.emailTemplates.siteName = "Sanus";
 	Accounts.emailTemplates.from = "Sanus Welcome <welcome@sanus.me>"
