@@ -1,0 +1,39 @@
+.add-to-medicines {
+	outline: none; border: none;
+	cursor: pointer;
+	background-color: transparent;
+	font-weight: bold;
+	padding: 4px 24px 4px 3px;
+	color: #777;
+	border-radius: 0 0 0 3px;
+	border-bottom: 2px solid #68AD99;
+	text-align: left;
+	-webkit-transition: all .3s;
+	   -moz-transition: all .3s;
+	    -ms-transition: all .3s;
+	     -o-transition: all .3s;
+	        transition: all .3s;
+}
+.add-to-medicines:focus {
+	opacity: 0.4;
+}
+
+
+.medicineView h1 {
+	color: #68AD99;
+	font-size: 24px;
+}
+.medicineView h2 {
+	font-family: 'Crimson Text', serif;
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: underline;
+	margin-bottom: 9px; margin-top: 12px;
+}
+
+.medicineView hr {
+	outline: none; border: none;
+	height: 1px;
+	background-color: #EBEBEB;
+}

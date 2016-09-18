@@ -192,3 +192,35 @@ p.empty-state {
 	height: 41px;
 }
 
+.medications ul {
+	list-style-type: none;
+	display: block;
+	margin: 9px 0 0;
+}
+.medications ul li {
+	display: flex;
+	box-shadow: 0px 4px 9px -9px #111;
+}
+.medications ul li a {
+	display: block;
+	flew-grow: 2;
+	padding: 9px 0 0;
+	padding-left: 9px;
+	line-height: 36px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 100%;
+}
+.medications ul li .remove-med {
+	flew-grow: 1;
+	width: 48px;
+	height: 48px;
+	background-color: transparent;
+	border: 0; outline: none;
+	cursor: pointer;
+}
+
+.medications ul li .remove-med:focus {
+	opacity: 0.3;
+}

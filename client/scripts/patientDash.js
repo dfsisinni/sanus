@@ -14,6 +14,21 @@ Template.patientDash.helpers({
 			notificationActions: true,
 			isRecommendation: true,
 		}]);
+	},
+	medications: function() {
+		return ([{
+			"_id": "asdf",
+			"name": "Tylenol", },
+			{
+			"_id": "asdf",
+			"name": "Tylenol",},
+			{
+			"_id": "asdf",
+			"name": "Tylenol",},
+			{
+			"_id": "asdf",
+			"name": "Tylenol",
+		}]);
 	}
 });
 
