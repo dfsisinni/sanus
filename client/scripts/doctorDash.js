@@ -51,4 +51,8 @@ Template.doctorDash.events({
 			$('#logoutOver').remove();
 		});
 	},
+
+	'click .add-medication': function () {
+		Session.set("searchMedications", true);
+	},
 });

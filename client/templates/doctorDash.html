@@ -31,7 +31,15 @@
 <template name="patient">
 	<div class="dash-card patient-lookup">
 		<h2><b>Patient: </b>{{patientData.name}}</h2>
-		<h3>Medications</h3>
-		
+		<h3><u>Medications</u></h3>
+		{{#each patientData.medications}}
+			<a href="/med/{{this._id}}">{{this.name}}</a>
+		{{/each}}
+
+		<button class="add-medication">+ add</button>
+		<h3 style="margin-top: 5px;"><u>Allergies</u></h3>
+		{{#each patientData.allergies}}
+			{{this}}
+		{{/each}}
 	</div>
 </template>
