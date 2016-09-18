@@ -16,10 +16,20 @@
 			<button style="border: none; background: none; float: right; height: 1px; zoom: 75%; padding-right: 4px;" type="submit"><img src="/resources/images/camera.svg"></button>
 		</div>
 		
-		<form class="lookup-form">
+		<form class="lookup-form" action="" method="POST">
 			<input type="text" style="margin-top: 10px;" id="patientLookup" name="patientLookup" placeholder="Enter Patient Code" />
-			<button type="submit" style="text-align: center; margin-left: 7px;">Search</button>
+			<button type="submit" id="searchPatient" style="text-align: center; margin-left: 7px;">Search</button>
 		</form>
-		
+	</div>
+
+	{{#if patientView}}
+		{{> patient}}
+	{{/if}}
+
+</template>
+
+<template name="patient">
+	<div class="dash-card patient-lookup">
+		<h2></h2>
 	</div>
 </template>

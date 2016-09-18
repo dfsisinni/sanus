@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
 const Drugs = new Mongo.Collection('drugs');
-const userInfo = new Mongo.Collection('userInfo');
 const Allergens = new Mongo.Collection('allergens');
 
 
