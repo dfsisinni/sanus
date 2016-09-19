@@ -72,6 +72,6 @@ Accounts.onCreateUser(function(options, user) {
 });
 
 
-Accounts.config({
+/*Accounts.config({
 	sendVerificationEmail: true,
-});
+});*/

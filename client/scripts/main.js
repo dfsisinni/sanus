@@ -9,7 +9,8 @@ Template.signup.events({
 			password: target.password.value,
 			profile: {
 				name: target.name.value,
-				type: target.type.value
+				type: target.type.value,
+				createdAt: moment().format('MMMM D, YYYY')
 			}
 		};
 
