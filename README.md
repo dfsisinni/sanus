@@ -9,8 +9,8 @@ Drug-based allergic reactions affect 10% of the world's population and up to 20%
 Drug data is supplied by the Canadian Open Data Exchange, OpenFDA and WebMD. 
 
 ##Technologies
-*Meteor
-*Apache Cordova
-*Mailgun
-*AWS
+* Meteor
+* Apache Cordova
+* Mailgun
+* AWS
 
