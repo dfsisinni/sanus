@@ -1,5 +1,5 @@
 # Sanus
-* Welcome to your personal medical portfolio * - http://sanus.me/
+*Welcome to your personal medical portfolio* - http://sanus.me/
 
 
 ## Overivew
